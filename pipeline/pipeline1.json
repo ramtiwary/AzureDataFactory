@@ -1,0 +1,37 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Notebook1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/ram.i.kumar1@cgm4l.onmicrosoft.com/RamFolder/Ram_NoteBook",
+					"baseParameters": {
+						"input": "@pipeline().parameters.name"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "RamAzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"name": {
+				"type": "string",
+				"defaultValue": "/FileStore/tables/Google_Stock_Price_Train.csv"
+			}
+		},
+		"annotations": []
+	}
+}
