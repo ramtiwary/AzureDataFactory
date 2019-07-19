@@ -40,7 +40,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "input",
+						"referenceName": "input1",
 						"type": "DatasetReference"
 					}
 				],
@@ -71,9 +71,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/ram.i.kumar1@cgm4l.onmicrosoft.com/RamFolder/mynotebook",
+					"notebookPath": "/Users/ram.i.kumar1@cgm4l.onmicrosoft.com/RamFolder/newnotebook",
 					"baseParameters": {
-						"input": "@pipeline().parameters.name"
+						"input": "@pipeline().parameters.input",
+						"output": "@pipeline().parameters.output"
 					}
 				},
 				"linkedServiceName": {
@@ -83,8 +84,13 @@
 			}
 		],
 		"parameters": {
-			"name": {
-				"type": "string"
+			"input": {
+				"type": "string",
+				"defaultValue": "/input"
+			},
+			"output": {
+				"type": "string",
+				"defaultValue": "/output"
 			}
 		},
 		"annotations": []
