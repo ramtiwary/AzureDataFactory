@@ -1,0 +1,57 @@
+{
+	"name": "input4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ReviewBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "houseprices.csv",
+				"folderPath": "input/input",
+				"container": "reviewblob"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Home",
+				"type": "String"
+			},
+			{
+				"name": "Price",
+				"type": "String"
+			},
+			{
+				"name": "SqFt",
+				"type": "String"
+			},
+			{
+				"name": "Bedrooms",
+				"type": "String"
+			},
+			{
+				"name": "Bathrooms",
+				"type": "String"
+			},
+			{
+				"name": "Offers",
+				"type": "String"
+			},
+			{
+				"name": "Brick",
+				"type": "String"
+			},
+			{
+				"name": "Neighborhood",
+				"type": "String"
+			}
+		]
+	}
+}
