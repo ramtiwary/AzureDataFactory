@@ -54,7 +54,14 @@
 			{
 				"name": "Notebook1",
 				"type": "DatabricksNotebook",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy Data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -62,9 +69,24 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/ram.i.kumar1@cgm4l.onmicrosoft.com/RamFolder/mynotebook",
+					"baseParameters": {
+						"input": "@pipeline().parameters.name"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "RamAzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
+		"parameters": {
+			"name": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
