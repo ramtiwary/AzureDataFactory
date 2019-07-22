@@ -1,0 +1,15 @@
+{
+	"name": "DestinationDataset_opb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbMongoDbApils",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbMongoDbApiCollection",
+		"typeProperties": {
+			"collection": "IoT1"
+		},
+		"schema": []
+	}
+}
